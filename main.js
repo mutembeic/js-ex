@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Select elements
   const openNavMenuBtn = document.getElementById('open-nav-menu');
   const closeNavMenuBtn = document.getElementById('close-nav-menu');
-  const navMenu = document.querySelector('.wrapper'); // This should be the menu you want to show/hide
+  const navMenu = document.querySelector('.wrapper');  
 
   // Function to open the navigation menu
   function openNavMenu() {
@@ -17,6 +17,27 @@ document.addEventListener('DOMContentLoaded', () => {
   openNavMenuBtn.addEventListener('click', openNavMenu);
   closeNavMenuBtn.addEventListener('click', closeNavMenu);
 });
+
+// Example temperature in Celsius 
+let temperatureInCelsius = 67;
+
+// Function to update the weather information
+function updateWeather() {
+  const isCelsius = document.getElementById('celsius').checked;
+  const temperature = isCelsius 
+    ? `${temperatureInCelsius} °C` 
+    : `${(temperatureInCelsius * 9/5 + 32).toFixed(1)} °F`;
+  document.getElementById('weather').textContent = `Temperature: ${temperature}`;
+}
+
+// Add event listeners to the radio buttons
+document.querySelectorAll('input[name="temperature"]').forEach(radio => {
+  radio.addEventListener('change', updateWeather);
+});
+
+updateWeather();
+
+
 // Display local time
 function updateTime() {
   const now = new Date();
@@ -93,11 +114,11 @@ document.addEventListener('DOMContentLoaded', function () {
       { src: './assets/products/img3.png', alt: 'Product 3' },
     ],
     paid: [
-      { src: './assets/products/img4.png', alt: 'Product 4' },
-      { src: './assets/products/img5.png', alt: 'Product 5' },
+      { src: './assets/products/img1.png', alt: 'Product 4' },
+      { src: './assets/products/img2.png', alt: 'Product 5' },
     ],
     free: [
-      { src: './assets/products/img6.png', alt: 'Product 6' },
+      { src: './assets/products/img3.png', alt: 'Product 6' },
     ]
   };
 
