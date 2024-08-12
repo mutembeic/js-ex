@@ -11,7 +11,7 @@ function updateTime() {
 }
 
 setInterval(updateTime, 1000);
-updateTime(); // Initial call to set the time immediately
+updateTime(); 
 
 // Image slider for the gallery section
 const galleryImages = [
@@ -45,7 +45,7 @@ function nextImage() {
   mainImage.src = galleryImages[currentImageIndex];
 }
 
-setInterval(nextImage, 3000); // Change image every 3 seconds
+setInterval(nextImage, 3000);  
 
 // Update greeting based on the time of day
 function updateGreeting() {
@@ -88,9 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
       const img = document.createElement('img');
       img.src = product.src;
       img.alt = product.alt;
-      img.style.maxWidth = '100%'; // Ensure the image fits well in its container
-      img.style.display = 'block';
-      img.style.margin = '10px 0'; // Add some spacing between images
       productsArea.appendChild(img);
     });
   }
@@ -106,7 +103,6 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('free').addEventListener('change', function () {
     displayProducts('free');
   });
-
-  // Initially display all products
+ 
   displayProducts('all');
 });
