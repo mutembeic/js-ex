@@ -1,3 +1,22 @@
+document.addEventListener('DOMContentLoaded', () => {
+  // Select elements
+  const openNavMenuBtn = document.getElementById('open-nav-menu');
+  const closeNavMenuBtn = document.getElementById('close-nav-menu');
+  const navMenu = document.querySelector('.wrapper'); // This should be the menu you want to show/hide
+
+  // Function to open the navigation menu
+  function openNavMenu() {
+    navMenu.classList.add('nav-open');  
+  }
+  // Function to close the navigation menu
+  function closeNavMenu() {
+    navMenu.classList.remove('nav-open');  
+  }
+
+  // Event listeners for open and close buttons
+  openNavMenuBtn.addEventListener('click', openNavMenu);
+  closeNavMenuBtn.addEventListener('click', closeNavMenu);
+});
 // Display local time
 function updateTime() {
   const now = new Date();
